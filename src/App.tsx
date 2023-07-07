@@ -1,15 +1,17 @@
 import { FC } from "react";
-import { Provider } from "react-redux";
 import Button from "./components/Button";
-import "./App.css";
-import store from "./app/store";
+import Counter from "./pages/Counter";
+import DataProvider from "./components/dataProvider";
 
 const App: FC = () => {
   return (
-    <Provider store={store}>
-      <h1>My App</h1>
-      <Button />
-    </Provider>
+    <DataProvider>
+      <div className="flex flex-col items-center justify-center">
+        <h1 className=" mb-56">My Redux-React App</h1>
+        <Button />
+        <Counter />
+      </div>
+    </DataProvider>
   );
 };
 

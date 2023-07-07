@@ -9,10 +9,16 @@ const Button: FC = () => {
 
   const handleClick = () => {
     dispatch(buttonClicked());
+    console.log("Hi there, Redux is working fine");
   };
 
   return (
-    <button onClick={handleClick}>{clicked ? "Clicked!" : "Click me"}</button>
+    <button
+      onClick={handleClick}
+      className={`${clicked ? " bg-red-400" : " bg-lime-500"}`}
+    >
+      {clicked ? "See Console!" : "Click me"}
+    </button>
   );
 };
 
